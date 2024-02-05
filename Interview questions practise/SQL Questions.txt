@@ -1,0 +1,320 @@
+Data Integrity:
+https://www.google.com/search?q=data+integrity+in+sql&sca_esv=601675174&sxsrf=ACQVn0_AUYKBBCMxykQKC1sWlP8nt02LzQ%3A1706256089237&ei=2WazZfuFDuqvseMP1-Cb0Ak&oq=data+integrity&gs_lp=Egxnd3Mtd2l6LXNlcnAiDmRhdGEgaW50ZWdyaXR5KgIIAjIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzINEAAYgAQYigUYQxiwAzINEAAYgAQYigUYQxiwA0i0ElAAWABwAXgBkAEAmAEAoAEAqgEAuAEByAEA4gMEGAAgQYgGAZAGCg&sclient=gws-wiz-serp
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+In SQL, the terms "database" and "schema" are related concepts, but they refer to different entities within the database management system. 
+Here are the key differences between a database and a schema:
+
+DATABASE:
+A database is a container that holds a collection of related data, tables, views, stored procedures, and other database objects.
+It is the overall storage system that manages and organizes data.
+Multiple databases can exist within a database management system (DBMS), and each database operates independently.
+Databases are often used to separate different applications or logical units of data.
+
+Schema:
+A schema is a container for database objects, such as tables, views, procedures, and functions.
+It is a way to organize database objects and provide a namespace for them.
+Each database can have multiple schemas, and each schema can contain its own set of objects.
+Schemas are useful for managing database objects and avoiding naming conflicts between different parts of the database.
+
+In summary, a database is the overarching container that holds all the data and database objects, 
+while a schema is a way to organize and group related database objects within a database. Multiple databases can exist within a DBMS,
+ and each database can have multiple schemas.
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+ACID Properties:
+https://www.geeksforgeeks.org/acid-properties-in-dbms/
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL Transactions:
+A transaction in SQL is a logical unit of work that contains one or more SQL statements that interact with a database.
+Transactions are essential for maintaining database integrity
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+What is the main difference between a function and a stored procedure?
+Functions cannot do any changes in database but can read them. Stored procedures can do anything and everything with databases.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Self-referenrial foreign key:
+Self-referential foreign keys are a powerful tool for representing hierarchical relationships in a relational database.
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    ManagerID INT, -- Self-referential foreign key
+    FOREIGN KEY (ManagerID) REFERENCES Employee(EmployeeID)
+);
+
+-- Sample data
+INSERT INTO Employee (EmployeeID, FirstName, LastName, ManagerID)
+VALUES
+    (1, 'John', 'Doe', NULL),     -- John is the top-level manager (no manager)
+    (2, 'Jane', 'Smith', 1),      -- Jane reports to John
+    (3, 'Bob', 'Johnson', 2),     -- Bob reports to Jane
+    (4, 'Alice', 'Williams', 1);  -- Alice reports to John
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Exist Operator:
+The EXISTS operator is used to test for the existence of any record in a subquery.
+SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
+
+IN Operator:
+The IN operator allows you to specify multiple values in a WHERE clause.
+SELECT COLUMN_NAME FROM TABLE_NAME
+WHERE COLUMN_NAME IN(VALUE1,VALUE2,...)
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Unicode:
+Unicode is a standardized system for encoding characters from most of the world's written languages. 
+It provides a unique numeric code for each character, regardless of the platform, program, or language.
+Unicode's primary purpose is to provide a consistent representation of text across different systems and devices.
+
+Character Representation:
+Each character is assigned a unique code point.
+Unicode can represent characters from various scripts, including Latin, Greek, Cyrillic, Arabic, Chinese, Japanese, Korean, and many others.
+
+Multilingual Support:
+Unicode supports a wide range of characters from different languages, making it suitable for multilingual data.
+
+Storage Size:
+The storage size for Unicode characters can vary, but it is often measured in terms of the number of characters, not bytes.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+Minus Operator:
+Returns only the rows in the first result set that donot appear in the second result set,sorting them and removing duplicates
+SELECT column1, column2, ...
+FROM table1
+MINUS
+SELECT column1, column2, ...
+FROM table2;
+
+IN Operator:
+The IN operator allows you to specify multiple values in a WHERE clause.
+SELECT column_name(s)
+FROM table_name
+WHERE column_name IN (value1, value2, ...);
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Group by:
+The GROUP BY clause in SQL is used to arrange rows that have the same values in specified columns into summary groups.
+It is often used in conjunction with aggregate functions to perform operations on each group of rows
+
+Grouping Function in SQL:
+A grouping function in SQL is like a helper that performs a specific calculation on a bunch of rows together.
+It's used when you want to analyze or summarize data grouped by certain criteria.
+Examples of grouping functions include COUNT (to count rows), SUM (to add up values), AVG (to find the average), MIN (to get the smallest value), and MAX (to get the largest value).
+These functions are often used with the GROUP BY clause, where you specify how to group the rows before applying the grouping function.
+
+A grouping function to do calculations on groups of rows, and the GROUP BY clause tells SQL how to define those groups.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Rollup & Cube Operators:
+In SQL, ROLLUP and CUBE are both extensions of the GROUP BY clause in the SELECT statement
+
+In summary, while both ROLLUP and CUBE are used for hierarchical summarization, ROLLUP provides subtotals in a specific hierarchy, 
+whereas CUBE provides subtotals for all possible combinations of the specified columns.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Row Number():
+In SQL, the ROW_NUMBER() function is used to assign a unique row number to each row within a partition of a result set. 
+The row number is generated based on the order specified in the ORDER BY clause.
+-- Assuming you have a table named 'employees'
+SELECT
+    employee_id,
+    employee_name,
+    salary,
+    ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num
+FROM
+    employees;
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Rank():
+The RANK function assigns a unique rank to each row in a result set based on a specified ordering.
+If two rows have the same values, they get the same rank, and the next rank is then skipped.
+For example, if two people have the highest score in a game, they both get rank 1, and the next person gets rank 3.
+SELECT
+    student_name,
+    exam_score,
+    RANK() OVER (ORDER BY exam_score DESC) AS ranking
+FROM
+    exam_results;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dense rank():
+The DENSE_RANK function assigns a unique rank to each row in a result set based on a specified ordering, similar to the RANK function.
+The key difference is that DENSE_RANK does not skip rank numbers for tied values. If two rows have the same values,
+they both get the same rank, and the next rank is not skipped.
+Example: If two people have the highest score in a game, they both get rank 1, and the next person gets rank 2 (not 3 as it would with RANK).
+SELECT
+    employee_name,
+    salary,
+    DENSE_RANK() OVER (ORDER BY salary DESC) AS ranking
+FROM
+    employees;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NVL():
+NVL function is used to replace NULL values with a specified default value. 
+It stands for "Null Value" and is commonly used to handle NULLs in expressions
+Syntax:
+NVL(expr1, expr2)
+
+expr1: The expression to be checked for NULL.
+expr2: The value to be returned if expr1 is NULL.
+ SELECT
+    employee_name,
+    NVL(salary, 0) AS actual_salary
+FROM
+    employees;
+In this example, if the salary column contains NULL for any employee, 
+the NVL function will replace it with 0, so the result will have a default value for NULL salaries.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Super Key:
+A super key is a combination of columns that can be used to uniquely identify a row in a table.
+CREATE TABLE Students (
+    StudentID INT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DateOfBirth DATE,
+    PRIMARY KEY (StudentID)
+);
+Here, the StudentID is a super key because it can uniquely identify each student.
+The concept is that you can use one or more columns to uniquely pinpoint a specific record in a table. 
+The PRIMARY KEY constraint is used to declare a column (or set of columns) as a super key in most cases.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Candidate Key:
+It's a set of columns that, together, can guarantee that no two rows are exactly the same. It's like giving each row its own unique label.
+CREATE TABLE Students (
+    StudentID INT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    DateOfBirth DATE,
+    PRIMARY KEY (StudentID)
+);
+Here, StudentID is a candidate key. It's like a  student code that ensures every student is different.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Normalization:
+Normalization in SQL is like organizing information in a way that makes it easier to manage and avoids unnecessary repetition.
+-- Unnormalized table
+CREATE TABLE UnnormalizedStudents (
+    StudentID INT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Course1 VARCHAR(50),
+    Course2 VARCHAR(50),
+    Course3 VARCHAR(50)
+);
+In this example, courses are directly part of the student table. But what if a student takes more or fewer courses? It becomes messy.
+Normalization helps avoid this mess. It typically involves breaking one big table into smaller, related tables.
+-- Normalized tables
+CREATE TABLE Students (
+    StudentID INT,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50)
+);
+
+CREATE TABLE Courses (
+    CourseID INT,
+    CourseName VARCHAR(50)
+);
+
+CREATE TABLE Enrollments (
+    EnrollmentID INT,
+    StudentID INT,
+    CourseID INT
+);
+Now, students, courses, and enrollments have their own tables. 
+Each table has a specific purpose, and information is linked through unique IDs (StudentID, CourseID). 
+This makes it easier to update, avoids repetition, and is generally more organized.
+In essence, normalization is about breaking down information into smaller, manageable pieces and linking them together to avoid unnecessary complications.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Index:
+Index is used to improve the speed of data retrieval operations
+Syntax:
+create <indexname> on 
+<tablename>(columnname);
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Constraints:
+constraint in SQL is like a set of rules that you define for your database tables to ensure the data is accurate, consistent, and follows certain conditions.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Super Key & Composite Key:
+In relational database terminology, both "super key" and "composite key" refer to combinations of one or more columns that are used to uniquely identify rows in a table. 
+However, there is a subtle difference between the two concepts:
+
+Super Key:
+
+A super key is any set of one or more attributes (columns) that, taken together, can uniquely identify a record in a table.
+It can include attributes that are not strictly necessary for uniqueness.
+A super key may have more attributes than the minimum required to uniquely identify each row.
+Every candidate key and the primary key are examples of super keys.
+
+Composite Key:
+
+A composite key specifically refers to a super key with two or more attributes (columns) that are combined to uniquely identify a record.
+Unlike a super key, a composite key implies that the key is made up of multiple attributes.
+In the context of a composite key, all included attributes are necessary for uniqueness.
+Example:
+
+Consider a table Students with columns StudentID, FirstName, and LastName.
+
+The combination of StudentID and FirstName can uniquely identify each student. This combination is a super key.
+If we have a combination of StudentID and FirstName as the primary key, then it is also a composite key.
+In summary, a composite key is a specific type of super key that involves multiple attributes, 
+and it is typically used as the primary key for a table to ensure uniqueness. 
+Every composite key is a super key, but not every super key is a composite key.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Super Key:
+A super key is any combination of columns (attributes) that can uniquely identify a record in a table.
+It may include more attributes than necessary for uniqueness, and it can potentially contain duplicate values.
+A super key is a broader concept that encompasses keys with duplicates.
+->A super key can contain null values. 
+
+Foreign Key:
+A foreign key is a column or set of columns in a table that refers to the primary key of another table.
+While the foreign key itself may contain duplicate values, its purpose is to establish a relationship with the referenced primary key.
+The presence of duplicate values in the foreign key column does not violate integrity, but it might represent a many-to-one relationship.
+->it can contain null values
+
+Composite Key:
+A composite key is a key that consists of multiple columns to uniquely identify a record.
+Each individual column in a composite key can contain duplicate values, but the combination of all columns in the key must be unique.
+The uniqueness is ensured by considering the combination of columns.
+->it doesnt contain null values
+
+Primary Key:
+A primary key uniquely identifies each record in a table.
+->It cannot contain duplicate values or nulls.
+
+Unique Key:
+A unique key ensures that all values in a column or a set of columns are distinct.
+->It can include nulls, but each non-null value must be unique.
+
+Candidate Key:
+->candidate keys in SQL do not allow duplicate values. A candidate key is a unique and non-null value for all tuples. It has two important constraints: the unique key constraint and the not null constraint. This ensures that values in the candidate key do not contain any duplicate values
+
+In summary, super keys, foreign keys, and composite keys can contain duplicate values, whereas primary keys and unique keys,candidate key enforce uniqueness.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

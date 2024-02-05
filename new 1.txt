@@ -1,2 +1,4 @@
 git checkout -b new_branch old_branch
 git branch new_branch
+
+git

@@ -283,7 +283,12 @@ Candidate Key:
 
 In summary, super keys, foreign keys, and composite keys can contain duplicate values, whereas primary keys and unique keys,candidate key enforce uniqueness.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+commit statement:
+commit statement is used to permanently the save the changes done
 
+Rollback Statement:
+Rollback Statement is used to undo the transactions that have not been saves in databse. The command is only be used to undo the changes since the last commit. 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

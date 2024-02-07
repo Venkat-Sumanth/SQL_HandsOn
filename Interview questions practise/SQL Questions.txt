@@ -16,7 +16,7 @@ It is a way to organize database objects and provide a namespace for them.
 Each database can have multiple schemas, and each schema can contain its own set of objects.
 Schemas are useful for managing database objects and avoiding naming conflicts between different parts of the database.
 
-In summary, a database is the overarching container that holds all the data and database objects, 
+In summary, a database is the  container that holds all the data and database objects, 
 while a schema is a way to organize and group related database objects within a database. Multiple databases can exist within a DBMS,
  and each database can have multiple schemas.
  -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ The GROUP BY clause in SQL is used to arrange rows that have the same values in 
 It is often used in conjunction with aggregate functions to perform operations on each group of rows
 
 Grouping Function in SQL:
-A grouping function in SQL is like a helper that performs a specific calculation on a bunch of rows together.
+A grouping function in SQL performs a specific calculation on a bunch of rows together.
 It's used when you want to analyze or summarize data grouped by certain criteria.
 Examples of grouping functions include COUNT (to count rows), SUM (to add up values), AVG (to find the average), MIN (to get the smallest value), and MAX (to get the largest value).
 These functions are often used with the GROUP BY clause, where you specify how to group the rows before applying the grouping function.
@@ -204,7 +204,7 @@ CREATE TABLE Students (
 
 CREATE TABLE Courses (
     CourseID INT,
-    CourseName VARCHAR(50)
+    CourseName VARCHAR(50)c
 );
 
 CREATE TABLE Enrollments (
@@ -289,16 +289,16 @@ commit statement is used to permanently the save the changes done
 Rollback Statement:
 Rollback Statement is used to undo the transactions that have not been saves in databse. The command is only be used to undo the changes since the last commit. 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Clustered index: 
+clustered index defines the data in which data is physically stored in a table |EX:- Dictionary
+A table can have only one clustered index
+cluster index is faster
 
-
-
-
-
-
-
-
-
-
+non-clustered index:
+Non-clustered index is stored at one place and table data is stored in other place |EX:- Book Index
+A table can have multiple non-clustered index
+non-cluster index is slower
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 

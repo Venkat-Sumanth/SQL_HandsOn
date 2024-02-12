@@ -15,7 +15,7 @@ A schema is a container for database objects, such as tables, views, procedures,
 It is a way to organize database objects and provide a namespace for them.
 Each database can have multiple schemas, and each schema can contain its own set of objects.
 Schemas are useful for managing database objects and avoiding naming conflicts between different parts of the database.
-
+ 
 In summary, a database is the  container that holds all the data and database objects, 
 while a schema is a way to organize and group related database objects within a database. Multiple databases can exist within a DBMS,
  and each database can have multiple schemas.
@@ -101,7 +101,7 @@ These functions are often used with the GROUP BY clause, where you specify how t
 
 A grouping function to do calculations on groups of rows, and the GROUP BY clause tells SQL how to define those groups.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Rollup & Cube Operators:
+Rollup & Cube Operators: 
 In SQL, ROLLUP and CUBE are both extensions of the GROUP BY clause in the SELECT statement
 
 In summary, while both ROLLUP and CUBE are used for hierarchical summarization, ROLLUP provides subtotals in a specific hierarchy, 

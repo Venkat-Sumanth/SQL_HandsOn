@@ -1,0 +1,24 @@
+Add a new column:
+ALTER TABLE table_name
+ADD column_name datatype;
+
+Modify an existing column:
+ALTER TABLE table_name
+ALTER COLUMN column_name new_datatype;
+
+Drop a column:
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+Add a primary key constraint:
+ALTER TABLE table_name
+ADD CONSTRAINT pk_constraint_name PRIMARY KEY (column_name);
+
+Add a foreign key constraint:
+ALTER TABLE table_name
+ADD CONSTRAINT fk_constraint_name FOREIGN KEY (column_name)
+REFERENCES referenced_table_name (referenced_column_name);
+
+Add an index:
+ALTER TABLE table_name
+ADD INDEX index_name (column_name);

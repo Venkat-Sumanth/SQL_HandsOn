@@ -108,7 +108,7 @@ In summary, while both ROLLUP and CUBE are used for hierarchical summarization, 
 whereas CUBE provides subtotals for all possible combinations of the specified columns.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Row Number():
-In SQL, the ROW_NUMBER() function is used to assign a unique row number to each row within a partition of a result set. 
+In SQL, the ROW_NUMBER() function is used to assign a unique row number to each row within a result set. 
 The row number is generated based on the order specified in the ORDER BY clause.
 -- Assuming you have a table named 'employees'
 SELECT
@@ -238,7 +238,7 @@ A super key may have more attributes than the minimum required to uniquely ident
 Every candidate key and the primary key are examples of super keys.
 
 Composite Key:
-
+Primary key -> Composite Key
 A composite key specifically refers to a super key with two or more attributes (columns) that are combined to uniquely identify a record.
 Unlike a super key, a composite key implies that the key is made up of multiple attributes.
 In the context of a composite key, all included attributes are necessary for uniqueness.
@@ -281,10 +281,10 @@ A unique key ensures that all values in a column or a set of columns are distinc
 Candidate Key:
 ->candidate keys in SQL do not allow duplicate values. A candidate key is a unique and non-null value for all tuples. It has two important constraints: the unique key constraint and the not null constraint. This ensures that values in the candidate key do not contain any duplicate values
 
-In summary, super keys, foreign keys, and composite keys can contain duplicate values, whereas primary keys and unique keys,candidate key enforce uniqueness.
+In summary, super keys, foreign keys can contain duplicate values, whereas composite key,primary keys and unique keys,candidate key enforce uniqueness.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 commit statement:
-commit statement is used to permanently the save the changes done
+commit statement is used to permanently save the changes done
 
 Rollback Statement:
 Rollback Statement is used to undo the transactions that have not been saves in databse. The command is only be used to undo the changes since the last commit. 

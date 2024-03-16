@@ -1,0 +1,27 @@
+select salary from(
+select salary ,row_number() over (order by salary desc) as rn from (
+select distinct(salary) from employee) as unique_salary
+) as ranked_salary
+where rn<=3
+
+select * from orders
+where salesaman_id = (select salesman_id from orders
+where city='new york';
+
+select commission from salesman
+where salesman_id in (select salesman_id from customer where city = 'paris');
+
+select count(*) from employee
+where department = 'ABC';
+
+select * from employee
+where first_name like '_____A';
+
+select * from employee
+where salary in (10000 and 50000);
+
+select count(*) from student
+where gender = 'male'
+and 
+marks > (select avg(marks) as avg_marks from students
+where gender = 'female');

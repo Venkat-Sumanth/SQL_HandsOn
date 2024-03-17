@@ -1,0 +1,22 @@
+Part of the TFT13 implementation project, responsible for developing the new Data Mart. 
+Data mart will act as a centralized repository for the whole of company source systems. 
+My responsibilities include:
+•	Analyzing existing data across multiple different source systems.
+•	Designing data model for the new Data Mart.
+•	Designing transformation logic to standardize data in Data Mart.
+•	Data Mapping between source and target system.
+
+The Faasos Online Ordering System Enhancement project aims to enhance
+ the existing online ordering platform used by Faasos customers to order food online. 
+ As a SQL developer, your role will be crucial in database design, optimization, 
+ and implementing new features to improve the system's performance and functionality.
+
+Final Outcome:
+Part of the online Ordering System Enhancement project aims to enhance 
+the existing online ordering platform used by customers to order food online
+My responsibilities include:
+Designing databases and ensuring their stability, reliability, and performance.
+Developing a database solution that optimizes order management and analysis for the online food delivery platform
+Data to measure quality and integrity, provide solutions to improve quality
+Database Analysis and Optimization
+Maintaining database schema and code change management

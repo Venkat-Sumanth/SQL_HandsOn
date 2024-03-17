@@ -15,5 +15,3 @@ order by infected_vaccinated_likelyhood;
 select location,population,sum(dead),(sum(dead)/population*100) as highest_death_rate from covid
 group by location,population
 order by location,population;
-
-

@@ -1,0 +1,64 @@
+Designing databases and ensuring their stability, reliability, and performance
+
+Develop, Implement and optimize Stored Procedures, Functions, Triggers, Views, Joins, database objects.
+
+Strong knowledge of database design principles, normalization, and indexing
+
+Experience with database performance tuning and optimization techniques.
+
+Acting as a key contributor throughout the software development lifecycle.
+
+Designing, programming and enhancements to platform software as defined under the scrum process guidance
+
+Trouble shooting Sql Server problems, Error handling.
+
+Handling of Large data tables and joins
+
+Experience with query optimization techniques, including query analysis, indexing, and performance tuning.
+
+Database Analysis and Optimization
+
+Query Optimization
+
+Reporting System Development
+
+Performance Monitoring and Maintenance
+
+Working with client/business analysts to define data requirements for enterprise analytical reporting needs.
+
+Designing and developing the automated routines (scripts etc.) to facilitate the application development and deployment process
+
+Maintaining DB schema and code change management
+
+Maintaining the product application data which is critical in product lifecycle 
+ and efficiently implementing the data migration in each release.
+ 
+Involving in database design, application development of health benefits functionality 
+ and developed mission-critical benefits eligibility exception report.
+ 
+Developing SQL routines for complex, enterprise-level application development tasks involving hierarchical tree structures.
+
+Data to measure quality and integrity, provide solutions to improve quality
+
+Served as the initial contact person for all SQL support queries.   
+
+Performed 60% of updates to the SQL system as assigned by management.   
+ 
+Improved the experience of over 50,000 software users by soliciting feedback and making software improvements. 
+  
+Supported code activations and updated business tool applications per company requirements.   
+
+Delivered database deployment through the whole system lifecycle.   
+
+Drive stability, reliability, and performance by optimizing in-application SQL statements and design user-focused databases
+
+Develop and optimize SQL queries, stored procedures, and triggers to implement new features and improve system performance.
+
+Document database schemas, data dictionaries, and SQL codebase for reference and future maintenance.
+
+Provide technical support and troubleshooting assistance to resolve database-related issues and performance bottlenecks.
+
+Analyze project information requirements, data relationships, and attributes, and determine data flows,
+ program structures, hardware needs, and outputs for projects.
+
+Extensive knowledge and hands on experience designing and developing objects and components of relational 

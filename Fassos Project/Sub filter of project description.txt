@@ -1,0 +1,17 @@
+Designing databases and ensuring their stability, reliability, and performance
+Strong knowledge of database design principles, normalization, and indexing
+Experience with database performance tuning and optimization techniques
+Acting as a key contributor throughout the software development lifecycle
+Handling of Large data tables and joins
+Database Analysis and Optimization
+Query Optimization
+Reporting System Development
+Maintaining DB schema and code change management
+Data to measure quality and integrity, provide solutions to improve quality
+Served as the initial contact person for all SQL support queries. 
+Drive stability, reliability, and performance by optimizing in-application SQL statements and design user-focused databases
+Develop and optimize SQL queries, stored procedures, and triggers to implement new features and improve system performance.
+Document database schemas, data dictionaries, and SQL codebase for reference and future maintenance.
+Provide technical support and troubleshooting assistance to resolve database-related issues and performance bottlenecks.
+Analyze project information requirements, data relationships, and attributes, and determine data flows,
+ program structures, hardware needs, and outputs for projects.
